@@ -1,8 +1,6 @@
-module Lib
+module RandomAccessList
     ( someFunc
     ) where
-
-import Data.Word
 
 type Nat = Word
 

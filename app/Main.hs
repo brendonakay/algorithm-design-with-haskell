@@ -1,6 +1,6 @@
 module Main (main) where
 
-import Lib
+import RandomAccessList
 
 main :: IO ()
 main = someFunc "foo"

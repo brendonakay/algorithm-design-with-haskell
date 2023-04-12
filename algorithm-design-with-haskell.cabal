@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      RandomAccessList
   other-modules:
       Paths_algorithm_design_with_haskell
   hs-source-dirs:
