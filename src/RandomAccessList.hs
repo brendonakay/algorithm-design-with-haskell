@@ -5,13 +5,13 @@ module RandomAccessList
 type Nat = Word
 
 -- Random Access List
-data Tree a = Leaf a | Node Nat (Tree a) (Tree a)
+data Tree a = Leaf a | Node Nat (Tree a) (Tree a) deriving Show
 
-size:: Tree a -> Nat
+size :: Tree a -> Nat
 size (Leaf x) = 1
 size (Node n _ _ ) = n
 
-data Digit a = Zero | One (Tree a)
+data Digit a = Zero | One (Tree a) deriving Show
 type RAList a = [Digit a]
 
 fromRA::RAList a -> [a]
@@ -43,3 +43,10 @@ fetchT k (Node n t1 t2) =
 
 someFunc :: String -> IO()
 someFunc = putStrLn
+
+consRA:: a -> RAList a -> RAList a
+consRA x xs = consT (Leaf x) xs
+consT t1 [] = [One t1]
+consT t1 (Zero: xs) = One t1: xs
+consT t1 (One t2: xs) = Zero: consT (node t1 t2) xs
+

@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      BinarySearch
       RandomAccessList
   other-modules:
       Paths_algorithm_design_with_haskell
